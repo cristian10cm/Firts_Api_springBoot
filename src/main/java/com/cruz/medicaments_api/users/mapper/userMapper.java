@@ -1,5 +1,6 @@
 package com.cruz.medicaments_api.users.mapper;
 
+import com.cruz.medicaments_api.auth.dto.RegisterRequest;
 import com.cruz.medicaments_api.users.dto.CreateUserDto;
 import com.cruz.medicaments_api.users.dto.UpdateUserDto;
 import com.cruz.medicaments_api.users.dto.UserResponseDto;
@@ -19,5 +20,5 @@ public interface userMapper {
     List<UserResponseDto> toDtoList(List<User> users);
     void updateEntity(UpdateUserDto dto, @MappingTarget User user);
     User toEntity(CreateUserDto dto);
-
+    User toEntityRegister(RegisterRequest dto);
 }
