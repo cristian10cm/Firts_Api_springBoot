@@ -1,11 +1,13 @@
 package com.cruz.medicaments_api.shared;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 public record ErrorResponse (
+        LocalDateTime timestamp,
         int statusCode,
         String error,
-        List<String> message
+        List<FieldErrorResponse> errors
 )
 {
 
