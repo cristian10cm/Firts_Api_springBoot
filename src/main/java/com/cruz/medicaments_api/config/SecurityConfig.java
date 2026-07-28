@@ -14,20 +14,17 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http)
             throws Exception {
-
+        System.out.println("<<<<<<<<<<<<<<<<<<< START CONFIG >>>>>>>>>>>>>>>>>>");
         http
 
                 .csrf(csrf -> csrf.disable())
 
                 .authorizeHttpRequests(auth -> auth
-
-                        .requestMatchers(
-                                "/auth/**"
-                        ).permitAll()
-
+                        .requestMatchers("/auth/**", "/error").permitAll()
                         .anyRequest().authenticated()
-
                 )
+
+
 
                 .httpBasic(Customizer.withDefaults());
 
