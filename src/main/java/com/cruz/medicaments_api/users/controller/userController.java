@@ -3,7 +3,6 @@ package com.cruz.medicaments_api.users.controller;
 import com.cruz.medicaments_api.users.dto.CreateUserDto;
 import com.cruz.medicaments_api.users.dto.UpdateUserDto;
 import com.cruz.medicaments_api.users.dto.UserResponseDto;
-import com.cruz.medicaments_api.users.entity.User;
 import com.cruz.medicaments_api.users.services.userService;
 import jakarta.validation.Valid;
 import org.springframework.web.bind.annotation.*;

@@ -33,27 +33,23 @@ public class AuthService {
     @Transactional
     public UserResponseDto register(RegisterRequest request){
 
-        System.out.println("1");
 
         if (userRepository.findByEmail(request.email()).isPresent()) {
             throw new RuntimeException("User already exists");
         }
 
-        System.out.println("2");
 
         User user = UserMapper.toEntityRegister(request);
 
-        System.out.println("3");
+
 
         user.setPassword(
                 passwordEncoder.encode(request.password())
         );
 
-        System.out.println("4");
 
         User saveU = userRepository.save(user);
 
-        System.out.println("5");
 
         return UserMapper.toDto(saveU);
     }
