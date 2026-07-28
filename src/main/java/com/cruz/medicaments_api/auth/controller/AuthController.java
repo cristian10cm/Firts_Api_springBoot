@@ -1,5 +1,7 @@
 package com.cruz.medicaments_api.auth.controller;
 
+import com.cruz.medicaments_api.auth.dto.AuthResponse;
+import com.cruz.medicaments_api.auth.dto.LoginRequest;
 import com.cruz.medicaments_api.auth.dto.RegisterRequest;
 import com.cruz.medicaments_api.auth.service.AuthService;
 import com.cruz.medicaments_api.users.dto.UserResponseDto;
@@ -21,5 +23,11 @@ public class AuthController {
     @PostMapping("/register")
     public UserResponseDto createNewUser( @Valid @RequestBody RegisterRequest user ){
         return authService.register(user);
+    }
+    @PostMapping("/login")
+    public AuthResponse login(
+            @RequestBody LoginRequest request
+    ){
+        return authService.login(request);
     }
 }
